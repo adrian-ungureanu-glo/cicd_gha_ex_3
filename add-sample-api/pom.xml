@@ -42,7 +42,7 @@
 		<repository>
       		<id>github</id>
       		<name>GitHub Packages</name>
-     	 	<url>https://maven.pkg.github.com/adrian-ungureanu-glo/cicd_gha_ex_3/add-sample-api</url>
+     	 	<url>https://maven.pkg.github.com/adrian-ungureanu-glo/cicd_gha_ex_3</url>
     	</repository>
 	</distributionManagement>
 
