@@ -39,6 +39,11 @@ jobs:
             }
           ]'
 
+
+    - name: Publish to GitHub Packages Apache Maven
+      run:  |
+        cd add-sample-api
+        mvn deploy
       env:
         GITHUB_USERNAME: adrian-ungureanu-glo
         GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
