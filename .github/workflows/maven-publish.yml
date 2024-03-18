@@ -39,7 +39,10 @@ jobs:
             }
           ]'
 
-
+    - name: JUnit Report Action
+      # You may pin to the exact commit or the version.
+      # uses: mikepenz/action-junit-report@5f47764eec0e1c1f19f40c8e60a5ba47e47015c5
+      uses: mikepenz/action-junit-report@v4.1.0
     - name: Publish to GitHub Packages Apache Maven
       run:  |
         cd add-sample-api
