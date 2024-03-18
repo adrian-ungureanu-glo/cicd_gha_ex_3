@@ -30,6 +30,6 @@ jobs:
     - name: Publish to GitHub Packages Apache Maven
       run:  |
         cd add-sample-api
-        mvn --batch-mode deploy
+        mvn --batch-mode deploy -X
       env:
         GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
