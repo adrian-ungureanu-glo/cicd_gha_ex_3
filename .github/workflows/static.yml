@@ -57,12 +57,10 @@ jobs:
         run: |
           cd add-sample-api
           mvn surefire-report:report-only
-      
+          mv target/site/surefire-report.html target/site/index.html      
       - name: Setup Pages
         uses: actions/configure-pages@v4
-
-      - name: Rename artifact
-        run: mv add-sample-api/target/site/surefire-report.html.html add-sample-api/target/site/index.html
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
