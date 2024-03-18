@@ -32,4 +32,4 @@ jobs:
         cd add-sample-api
         mvn --batch-mode deploy
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
