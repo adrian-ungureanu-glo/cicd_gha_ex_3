@@ -57,14 +57,6 @@ jobs:
         run: |
           cd add-sample-api
           mvn surefire-report:report-only
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          files: |
-            test-results/**/*.xml
-            test-results/**/*.trx
-            test-results/**/*.json
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
