@@ -8,7 +8,7 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>adrian-ungureanu-glo</groupId>
+	<groupId>com.adrian.gha</groupId>
 	<artifactId>add-sample-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>add-sample-api</name>
