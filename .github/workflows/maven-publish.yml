@@ -28,6 +28,8 @@ jobs:
       run: mvn -B package --file add-sample-api/pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run:  mvn --batch-mode deploy
+      run:  |
+        cd add-sample-api
+        mvn --batch-mode deploy
       env:
         GITHUB_TOKEN: ${{ github.token }}
