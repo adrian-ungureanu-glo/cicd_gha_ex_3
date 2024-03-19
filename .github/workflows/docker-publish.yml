@@ -33,7 +33,7 @@ jobs:
       # with sigstore/fulcio when running outside of PRs.
       id-token: write
   build:
-
+    needs: integration
     runs-on: ubuntu-latest
     permissions:
       contents: read
