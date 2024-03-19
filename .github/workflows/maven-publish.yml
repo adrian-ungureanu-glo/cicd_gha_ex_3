@@ -39,15 +39,6 @@ jobs:
               "password": "${env.GITHUB_TOKEN}"
             }
           ]'
-
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      if: always()
-      with:
-        files: |
-          test-results/**/*.xml
-          test-results/**/*.trx
-          test-results/**/*.json
     - name: Publish to GitHub Packages Apache Maven
       run:  |
         cd add-sample-api
