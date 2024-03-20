@@ -36,7 +36,7 @@ jobs:
       packages: read
     secrets: inherit
   deploy-production:
-    needs: build
+    needs: deploy-test
     uses: ./.github/workflows/aws-workflow.yml
     with:
       environment: Production
