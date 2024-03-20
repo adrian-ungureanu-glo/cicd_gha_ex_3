@@ -33,8 +33,5 @@ jobs:
     with:
       environment: Test
     permissions:
-      checks: write
-      packages: write
-      id-token: write
-      contents: write
+      packages: read
     secrets: inherit
