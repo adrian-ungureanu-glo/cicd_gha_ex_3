@@ -31,7 +31,7 @@ jobs:
       packages: write
       id-token: write
       contents: write
-    env:
+    with:
         GITHUB_USERNAME: adrian-ungureanu-glo1
         GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
   build:
