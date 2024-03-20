@@ -30,6 +30,7 @@ jobs:
       checks: write
       packages: write
       id-token: write
+      contents: write
   build:
     needs: integration
     runs-on: ubuntu-latest
