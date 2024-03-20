@@ -42,7 +42,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
 
       - name: Deploy staging with push to ECR
-        if: ${{ inputs.environment }} == 'Staging'
+        if: ${{ inputs.environment }} == 'Test'
         id: push
         run: |
           docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
