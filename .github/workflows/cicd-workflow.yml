@@ -30,6 +30,8 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/aws-workflow.yml
+    with:
+      environment: Test
     permissions:
       checks: write
       packages: write
