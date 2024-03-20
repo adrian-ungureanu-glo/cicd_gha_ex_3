@@ -30,6 +30,7 @@ jobs:
       id-token: write
       contents: write
     secrets: inherit
+  build:
     needs: integration
     runs-on: ubuntu-latest
     permissions:
