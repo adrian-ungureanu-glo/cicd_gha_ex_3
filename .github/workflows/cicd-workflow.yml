@@ -7,6 +7,14 @@ name: CICD Workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: choice
+        description: Enter the target environment for the deployment
+        options:
+        - Test
+        - Production
 
 
 jobs:
