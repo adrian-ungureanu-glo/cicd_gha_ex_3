@@ -7,14 +7,12 @@ name: Docker
 
 on:
   workflow_call:
-  schedule:
-    - cron: '41 14 * * *'
-  push:
-    branches: [ "main" ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
+  #   # Publish semver tags as releases.
+  #   tags: [ 'v*.*.*' ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -31,10 +29,7 @@ jobs:
       packages: write
       id-token: write
       contents: write
-    with:
-        GITHUB_USERNAME: adrian-ungureanu-glo1
-        GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
-  build:
+    secrets: inherit
     needs: integration
     runs-on: ubuntu-latest
     permissions:
