@@ -35,11 +35,19 @@ jobs:
       id-token: write
       contents: write
     secrets: inherit
-  deploy:
+  deploy-test:
     needs: build
     uses: ./.github/workflows/aws-workflow.yml
     with:
       environment: Test
+    permissions:
+      packages: read
+    secrets: inherit
+  deploy-production:
+    needs: build
+    uses: ./.github/workflows/aws-workflow.yml
+    with:
+      environment: Production
     permissions:
       packages: read
     secrets: inherit
