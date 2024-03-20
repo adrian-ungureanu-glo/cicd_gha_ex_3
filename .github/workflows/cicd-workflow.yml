@@ -31,7 +31,7 @@ jobs:
     needs: build
     uses: ./.github/workflows/aws-workflow.yml
     with:
-      inputs.environment: Test
+      environment: Test
     permissions:
       packages: read
     secrets: inherit
@@ -39,7 +39,7 @@ jobs:
     needs: deploy-test
     uses: ./.github/workflows/aws-workflow.yml
     with:
-      inputs.environment: Production
+      environment: Production
     permissions:
       packages: read
     secrets: inherit

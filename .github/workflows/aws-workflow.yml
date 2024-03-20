@@ -53,12 +53,14 @@ jobs:
         if: ${{ inputs.environment }} == 'Test'
         id: push
         run: |
+          echo ${{ inputs.environment }}
           docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
           docker tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main ${{ secrets.AWS_ACCOUNT_NUMBER }}.dkr.ecr.${{ vars.AWS_REGION }}.amazonaws.com/${{ github.event.repository.name }}
           docker push ${{ secrets.AWS_ACCOUNT_NUMBER }}.dkr.ecr.${{ vars.AWS_REGION }}.amazonaws.com/${{ github.event.repository.name }}
       - name: Deploy production with aws CLI
         if: ${{ inputs.environment }} == 'Production'
         run: |
+          echo ${{ inputs.environment }}
           aws apprunner start-deployment --service-arn="${{ vars.SERVICE_ARN }}"
 
       - name: Wait for Deployment to Begin
