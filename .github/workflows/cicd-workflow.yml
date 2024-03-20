@@ -1,0 +1,38 @@
+name: Docker
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  integration:
+    uses: ./.github/workflows/maven-publish.yml
+    permissions:
+      checks: write
+      packages: write
+      id-token: write
+      contents: write
+    secrets: inherit
+  build:
+    needs: integration
+    uses: ./.github/workflows/docker-publish.yml
+    permissions:
+      checks: write
+      packages: write
+      id-token: write
+      contents: write
+    secrets: inherit
+  deploy:
+    needs: build
+    uses: ./.github/workflows/aws-workflow.yml
+    permissions:
+      checks: write
+      packages: write
+      id-token: write
+      contents: write
+    secrets: inherit

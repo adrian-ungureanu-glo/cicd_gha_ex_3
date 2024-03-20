@@ -22,16 +22,7 @@ env:
 
 
 jobs:
-  integration:
-    uses: ./.github/workflows/maven-publish.yml
-    permissions:
-      checks: write
-      packages: write
-      id-token: write
-      contents: write
-    secrets: inherit
   build:
-    needs: integration
     runs-on: ubuntu-latest
     permissions:
       contents: read
