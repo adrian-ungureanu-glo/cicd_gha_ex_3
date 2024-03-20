@@ -5,13 +5,13 @@ FROM maven:3-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copy the pom.xml file
-COPY pom.xml .
+COPY add-sample-api/pom.xml .
 
 # Download the dependencies
 RUN mvn dependency:go-offline -B
 
 # Copy the source code
-COPY src ./src
+COPY add-sample-api/src ./src
 
 # Build the application
 RUN mvn package -DskipTests
